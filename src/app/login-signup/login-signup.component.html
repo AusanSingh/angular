@@ -121,7 +121,7 @@
             <input type="password" placeholder="Password" name="password" required="" aria-required="true" class="valid form-control" aria-invalid="false">
           </div>
 
-          <input type="submit" class="btn btn-primary btn-block login_button" value="Login">
+          <input type="submit" class="btn btn-primary btn-block login_button" value="Login" [routerLink]="['/bots']" (click)="onLoggedin($event)">
         </form>
 
       </div>

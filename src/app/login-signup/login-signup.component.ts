@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Routes, RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-signup',
@@ -6,14 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-signup.component.scss']
 })
 export class LoginSignupComponent implements OnInit {
-  constructor() { }
+  public login = true;
+  public signup = false;
+
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
-
-
-  public login = true;
-  public signup = false;
 
   show(tab) {
     this.login = false;
@@ -25,5 +25,10 @@ export class LoginSignupComponent implements OnInit {
     if (tab === 'signup') {
       this.signup = true;
     }
+  }
+  onLoggedin(e) {
+    e.preventDefault();
+    console.log(e);
+    localStorage.setItem('isLoggedin', 'true');
   }
 }
