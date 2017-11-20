@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Routes, RouterModule, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login-signup',
-  templateUrl: './login-signup.component.html',
-  styleUrls: ['./login-signup.component.scss']
+  selector: 'app-account',
+  templateUrl: './account.component.html',
+  styleUrls: ['./account.component.scss']
 })
-export class LoginSignupComponent implements OnInit {
+export class AccountComponent implements OnInit {
   public login = true;
   public signup = false;
 

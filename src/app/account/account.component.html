@@ -106,50 +106,12 @@
       <div id="form-message"></div>
 
       <div class="top-tabs">
-        <a href="javascript:void(0);" class="login-btn active" (click)="show('login')">Login</a>
-        <a href="javascript:void(0);" class="signup-btn" (click)="show('signup')">Sign Up</a>
+        <a href="" class="login-btn" [routerLink]="['/account/login']"  routerLinkActive="active">Login</a>
+        <a href="" class="signup-btn" [routerLink]="['/account/signup']"  routerLinkActive="active">Sign Up</a>
       </div>
-      <div class="login-wrap" *ngIf="login">
-        <h4>Welcome Back!</h4>
-        <form id="login" method="POST" action="/accounts/login/" novalidate="novalidate">
-
-          <div class="form-group">
-            <input type="text" placeholder="Email" name="email" required="" aria-required="true" class="valid form-control" aria-invalid="false">
-          </div>
-
-          <div class="form-group">
-            <input type="password" placeholder="Password" name="password" required="" aria-required="true" class="valid form-control" aria-invalid="false">
-          </div>
-
-          <input type="submit" class="btn btn-primary btn-block login_button" value="Login" [routerLink]="['/bots']" (click)="onLoggedin($event)">
-        </form>
-
-      </div>
-      <div class="sign-up" *ngIf="signup">
-        <form id="signup_form" action="/accounts/signup/" method="post" novalidate="novalidate">
-          <div class="form-group">
-            <input type="text" class= "form-control" placeholder="First Name" name="first_name" required="" aria-required="true">
-          </div>
-          <div class="form-group">
-            <input type="text" class= "form-control" placeholder="Last Name" name="last_name" required="" aria-required="true">
-          </div>
-          <div class="form-group">
-            <input type="text" class= "form-control" placeholder="Email" name="email" required="" aria-required="true">
-          </div>
-          <div class="form-group">
-              <input class="form-control" id="callback" type="tel" name="contact" placeholder="Contact Number" required="" aria-required="true"
-                  autocomplete="off">
-          </div>
-          
-          <br>
-          <div class="terms_condition form-group">
-            <input type="checkbox" name="agree" value=""> I have read the
-            <a href="javascript:void(0)">terms &amp; conditions</a>
-          </div>
-
-          <input type="submit" class="button sign_up_button" value="Sign Up">
-        </form>
-      </div>
+      
+      <router-outlet></router-outlet>
+      
     </div>
   </div>
 
