@@ -1,16 +1,18 @@
 <div class="login-wrap">
     <h4>Welcome Back!</h4>
-    <form id="login" method="POST" action="/accounts/login/" novalidate="novalidate">
-
+    <form action="/" [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
       <div class="form-group">
-        <input type="text" placeholder="Email" name="email" required="" aria-required="true" class="valid form-control" aria-invalid="false">
+        <input type="text" placeholder="Email" name="email" required class="form-control" formControlName = "email">
+        <div class="alert alert-danger" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">
+          Please enter valid email.
+        </div>
       </div>
 
       <div class="form-group">
-        <input type="password" placeholder="Password" name="password" required="" aria-required="true" class="valid form-control" aria-invalid="false">
+        <input type="password" placeholder="Password" name="password" required class="form-control"  formControlName = "password">
       </div>
 
-      <input type="submit" class="btn btn-primary btn-block login_button" value="Login" [routerLink]="['/bots']" (click)="onLoggedin($event)">
+      <input type="submit" class="btn btn-primary btn-block" value="Login" [disabled]="!rForm.valid">
     </form>
 
   </div>
