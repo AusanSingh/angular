@@ -27,10 +27,11 @@ export class LoginComponent implements OnInit {
 
   addPost(post) {
     console.log(post);
-    this.httpClient.post(`https://reqres.in/api/users`, post)
+    this.httpClient.post(`http://mockbin.org/request`, post)
       .subscribe(
         (data) => {
           console.log(data);
+          localStorage.setItem('isLoggedin', 'true');
         }
       );
   }

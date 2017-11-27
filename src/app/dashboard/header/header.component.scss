@@ -1,0 +1,105 @@
+/*------------------
+// Navbar
+------------------*/
+
+
+.logo {
+    float: left;
+}
+
+.logo a {
+    color: #abc370;
+    height: 60px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 54px;
+    padding: 0px 10px;
+    display: block;
+}
+.logo a img{
+    max-height: 24px;
+}
+
+.logo a:hover {
+    color: #abc370;
+}
+
+.nav-links nav ul{
+    margin: 0;
+}
+
+.nav-links nav li {
+    display: inline-block;
+    float: left;
+    line-height: 60px;
+    position: relative;
+}
+
+.nav-links nav a {
+    color: #666;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 0px 10px;
+}
+#main-menu > li:hover a .fa {
+    transform: rotate(360deg);
+}
+
+#main-menu > li:hover > a,
+#main-menu .submenu > li:hover > a {
+    background: #abc370;
+    color: #fff;
+    cursor: pointer;
+}
+
+#main-menu > li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu {
+    background: #fff;
+    border-radius: 4px;
+    display: block;
+    right: 0;
+    min-width: 200px;
+    opacity: 0;
+    outline: 1px solid rgba(128, 128, 128, 0.3);
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    transition: all 0.25s ease;
+    visibility: hidden;
+    -moz-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    z-index: 1000;
+}
+
+.submenu.right-open {
+    left: initial;
+    right: 0;
+}
+
+.submenu:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu li {
+    display: block;
+    float: left;
+    width: 100%;
+    line-height: 40px;
+}
+
+.submenu a {
+    color: #000;
+    display: block;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.submenu a:hover {
+    color: #8BBFB2;
+}
